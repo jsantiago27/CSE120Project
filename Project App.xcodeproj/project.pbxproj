@@ -14,11 +14,10 @@
 		5F03379D23F4952200C05850 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F03379C23F4952200C05850 /* Preview Assets.xcassets */; };
 		5F0337AB23F4952300C05850 /* Project_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0337AA23F4952300C05850 /* Project_AppTests.swift */; };
 		5F0337B623F4952300C05850 /* Project_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0337B523F4952300C05850 /* Project_AppUITests.swift */; };
-		5F0E1A7C23F64F690057FB2F /* Stuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0E1A7B23F64F690057FB2F /* Stuff.swift */; };
 		5F176C4F240F084D001FFEDA /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F176C4E240F084D001FFEDA /* Camera.swift */; };
+		5F176C5124106685001FFEDA /* ImageSelectionUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F176C5024106685001FFEDA /* ImageSelectionUI.swift */; };
 		5F6BABD623F8A57E00E68E2F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6BABD523F8A57E00E68E2F /* ImagePicker.swift */; };
 		5F7A9D0B23F5DE100015C5DE /* RowViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A9D0A23F5DE100015C5DE /* RowViews.swift */; };
-		5F7A9D0D23F5DED90015C5DE /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A9D0C23F5DED90015C5DE /* People.swift */; };
 		5FCE475123F4AAD0009ADD00 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCE475023F4AAD0009ADD00 /* CircleImage.swift */; };
 		5FCE475323F4AC01009ADD00 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCE475223F4AC01009ADD00 /* MapView.swift */; };
 /* End PBXBuildFile section */
@@ -54,11 +53,10 @@
 		5F0337B123F4952300C05850 /* Project AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F0337B523F4952300C05850 /* Project_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_AppUITests.swift; sourceTree = "<group>"; };
 		5F0337B723F4952300C05850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5F0E1A7B23F64F690057FB2F /* Stuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stuff.swift; sourceTree = "<group>"; };
 		5F176C4E240F084D001FFEDA /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		5F176C5024106685001FFEDA /* ImageSelectionUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionUI.swift; sourceTree = "<group>"; };
 		5F6BABD523F8A57E00E68E2F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		5F7A9D0A23F5DE100015C5DE /* RowViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowViews.swift; sourceTree = "<group>"; };
-		5F7A9D0C23F5DED90015C5DE /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		5FCE475023F4AAD0009ADD00 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		5FCE475223F4AC01009ADD00 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,12 +113,11 @@
 				5F03379323F4952000C05850 /* AppDelegate.swift */,
 				5F03379523F4952000C05850 /* SceneDelegate.swift */,
 				5F03379723F4952000C05850 /* ContentView.swift */,
+				5F176C5024106685001FFEDA /* ImageSelectionUI.swift */,
 				5F6BABD523F8A57E00E68E2F /* ImagePicker.swift */,
 				5F176C4E240F084D001FFEDA /* Camera.swift */,
 				5F7A9D0A23F5DE100015C5DE /* RowViews.swift */,
-				5F7A9D0C23F5DED90015C5DE /* People.swift */,
 				5FCE475023F4AAD0009ADD00 /* CircleImage.swift */,
-				5F0E1A7B23F64F690057FB2F /* Stuff.swift */,
 				5FCE475223F4AC01009ADD00 /* MapView.swift */,
 				5F03379923F4952200C05850 /* Assets.xcassets */,
 				5F0337A123F4952200C05850 /* Info.plist */,
@@ -287,14 +284,13 @@
 			files = (
 				5F176C4F240F084D001FFEDA /* Camera.swift in Sources */,
 				5F03379423F4952000C05850 /* AppDelegate.swift in Sources */,
+				5F176C5124106685001FFEDA /* ImageSelectionUI.swift in Sources */,
 				5F7A9D0B23F5DE100015C5DE /* RowViews.swift in Sources */,
 				5FCE475123F4AAD0009ADD00 /* CircleImage.swift in Sources */,
 				5FCE475323F4AC01009ADD00 /* MapView.swift in Sources */,
 				5F6BABD623F8A57E00E68E2F /* ImagePicker.swift in Sources */,
 				5F03379623F4952000C05850 /* SceneDelegate.swift in Sources */,
 				5F03379823F4952000C05850 /* ContentView.swift in Sources */,
-				5F0E1A7C23F64F690057FB2F /* Stuff.swift in Sources */,
-				5F7A9D0D23F5DED90015C5DE /* People.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

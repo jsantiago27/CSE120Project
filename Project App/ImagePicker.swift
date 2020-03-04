@@ -18,10 +18,8 @@ struct ImagePicker : UIViewControllerRepresentable {
     // This will hold the image that is chosen/captured by the user.
     @Binding var image: Image?
     var sourceType: Int
-    
-    
     //
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
+    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
         // Left empty on purpose, for now
     }
     
@@ -32,7 +30,7 @@ struct ImagePicker : UIViewControllerRepresentable {
     }
     
     // This will handle the user image picks
-    func makeUIViewController(context: Context) -> UIImagePickerController {
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
         let picker = UIImagePickerController()
         // Allow the user to edit the photo
         picker.allowsEditing = true
@@ -43,34 +41,31 @@ struct ImagePicker : UIViewControllerRepresentable {
         // Return the controller which shows the menu/camera based on user's input
         return picker
     }
-    
-    // The coordinator class that will handle the inputs of our user.
-    class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-        
-        // Binding variables that are the same as above.
-        @Binding var isShown: Bool
-        @Binding var image: Image? // Check if its nil (null) or not.
-        
-        // Instantiate based on specific parameters
-        init(isShown: Binding<Bool>, image: Binding<Image?>) {
-            _isShown = isShown
-            _image = image
-        }
-        
-        // Handles the user's input when he looking in the photo library or captured the image
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            let uiImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-            image = Image(uiImage: uiImage)
-            isShown = false
-            
-        }
-        
-        // When the user cancels the selection/camera capture
-        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-            isShown = false
-        }
-    }
+}
 
+// The coordinator class that will handle the inputs of our user.
+class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    // Binding variables that are the same as above.
+    @Binding var isShown: Bool
+    @Binding var image: Image? // Check if its nil (null) or not.
     
+    // Instantiate based on specific parameters
+    init(isShown: Binding<Bool>, image: Binding<Image?>) {
+        _isShown = isShown
+        _image = image
+    }
+    
+    // Handles the user's input when he looking in the photo library or captured the image
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let uiImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        image = Image(uiImage: uiImage)
+        isShown = false
+        
+    }
+    
+    // When the user cancels the selection/camera capture
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        isShown = false
+    }
 }

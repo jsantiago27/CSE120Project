@@ -9,76 +9,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    // State variables are variables that saves it "state" or value when there is an update
-    // from your scene. Whenever a state is change, the application will recompute the body
-    // to adapt the changes of the state.
-    // If you analyze the code, you will see that the State Variables and Binded variables in the
-    // other files have the same name, the reason is the binded variables are "binded" to the state
-    // variables such that whenever you there is a changed to the binded variable, it will also
-    // affect the state variable.
-    @State var showImagePicker: Bool = false
-    @State var image: Image? = Image("Garfield")
-    @State var showActionSheet:Bool = false
-    @State var sourceType: Int = 0
-    
     var body: some View {
-        // A ZStack allows windows to be stack on top of each other
-        ZStack {
-            // A VStack stacks windows vertically
+
+        ScrollView {
             VStack {
-                // A MapView struct view that you can check in MapView.swift
-                MapView()
-                    .offset(y: -50)
-                    .edgesIgnoringSafeArea(.top)
-                    .frame(height: 300)
+                ImageSelectionUI(imageNum: 0)
+                ImageSelectionUI(imageNum: 1)
+                ImageSelectionUI(imageNum: 2)
+                ImageSelectionUI(imageNum: 3)
+                ImageSelectionUI(imageNum: 4)
+                ImageSelectionUI(imageNum: 5)
+                ImageSelectionUI(imageNum: 6)
+                ImageSelectionUI(imageNum: 7)
                 
-                // A basic SwiftUI Text
-                Text("Hello Madafaka!")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.white)
-                    .offset(y: -200)
-                    .foregroundColor(.white)
-                
-                VStack {
-                    image?
-                        .resizable()
-                        .clipped()
-                        .clipShape(Circle())
-                        .frame(width: 160, height: 160)
-                        .aspectRatio(contentMode: .fill)
-                        .overlay(
-                            Circle().stroke(Color.white, lineWidth: 2.0)
-                        )
-                        .shadow(radius: 10)
-                        .overlay(
-                            // The camera button. See Camera.swift
-                            // Will also call the actionSheet below
-                            Camera(showActionSheet: $showActionSheet)
-                                .offset(x: 60, y:65)
-                        )
-                }
-            }
-            .actionSheet(isPresented: $showActionSheet, content: { () -> ActionSheet in
-                    ActionSheet(title: Text("Select Image"), message: Text("Please select an image from the gallery or use the camera"), buttons: [ActionSheet.Button.default(Text("Camera"),action: {
-                        self.sourceType = 0
-                        self.showImagePicker.toggle()
-                    }),
-                    ActionSheet.Button.default(Text("Photo Gallery"), action: {
-                        self.sourceType = 1
-                        self.showImagePicker.toggle()
-                        
-                    }),
-                    // Cancle Button
-                    ActionSheet.Button.cancel()
-                ])
-            })
-            if showImagePicker {
-                // Instantiate the Image Picker
-                ImagePicker(isShown: $showImagePicker, image: $image, sourceType: sourceType)
             }
         }
+        .padding()
     }
 }
 
