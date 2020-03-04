@@ -10,20 +10,30 @@ import SwiftUI
 
 struct ContentView: View {
     
+    // State variables are variables that saves it "state" or value when there is an update
+    // from your scene. Whenever a state is change, the application will recompute the body
+    // to adapt the changes of the state.
+    // If you analyze the code, you will see that the State Variables and Binded variables in the
+    // other files have the same name, the reason is the binded variables are "binded" to the state
+    // variables such that whenever you there is a changed to the binded variable, it will also
+    // affect the state variable.
     @State var showImagePicker: Bool = false
     @State var image: Image? = Image("Garfield")
     @State var showActionSheet:Bool = false
     @State var sourceType: Int = 0
     
     var body: some View {
+        // A ZStack allows windows to be stack on top of each other
         ZStack {
+            // A VStack stacks windows vertically
             VStack {
-                
+                // A MapView struct view that you can check in MapView.swift
                 MapView()
                     .offset(y: -50)
                     .edgesIgnoringSafeArea(.top)
                     .frame(height: 300)
-                    
+                
+                // A basic SwiftUI Text
                 Text("Hello Madafaka!")
                     .font(.title)
                     .fontWeight(.bold)
@@ -43,6 +53,8 @@ struct ContentView: View {
                         )
                         .shadow(radius: 10)
                         .overlay(
+                            // The camera button. See Camera.swift
+                            // Will also call the actionSheet below
                             Camera(showActionSheet: $showActionSheet)
                                 .offset(x: 60, y:65)
                         )
@@ -58,11 +70,12 @@ struct ContentView: View {
                         self.showImagePicker.toggle()
                         
                     }),
-                    
+                    // Cancle Button
                     ActionSheet.Button.cancel()
                 ])
             })
             if showImagePicker {
+                // Instantiate the Image Picker
                 ImagePicker(isShown: $showImagePicker, image: $image, sourceType: sourceType)
             }
         }
