@@ -6,13 +6,7 @@
 //  Copyright © 2020 Jefferson Santiago. All rights reserved.
 //
 
-import AVFoundation
 import SwiftUI
-
-class CameraViewController : UIViewController {
-
-}
-
 
 struct Camera: View {
     @Binding var showActionSheet: Bool
