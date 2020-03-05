@@ -24,7 +24,7 @@ struct ImageSelectionUI: View {
 
     
     var body: some View {
-        //ZStack {
+        ZStack {
             // A VStack stacks windows vertically
             VStack {
                 HStack {
@@ -32,7 +32,7 @@ struct ImageSelectionUI: View {
                         .resizable()
                         .clipped()
                         .cornerRadius(20)
-                        .frame(width: 100, height: 100)
+                        .frame(width: 150, height: 150)
                         .aspectRatio(contentMode: .fill)
                         .shadow(radius: 10)
                     
@@ -41,7 +41,7 @@ struct ImageSelectionUI: View {
                     Camera(showActionSheet: $showActionSheet)
 
                 }
-                .padding(8)
+                .padding(12)
                 .actionSheet(isPresented: $showActionSheet, content: { () -> ActionSheet in
                         ActionSheet(title: Text("Select Image"), message: Text("Please select an image from the gallery or use the camera"), buttons: [ActionSheet.Button.default(Text("Camera"),action: {
                             self.sourceType = 0
@@ -60,7 +60,9 @@ struct ImageSelectionUI: View {
                         ImagePicker(isShown: self.$showImagePicker, image: self.$image, sourceType: self.sourceType)
                 }
             }
-        //}
+            .background(Color.gray)
+            .cornerRadius(10)
+        }
     }
 }
 

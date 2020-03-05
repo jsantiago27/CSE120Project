@@ -43,7 +43,7 @@
 		5F03379023F4952000C05850 /* Project App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F03379323F4952000C05850 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "/Users/jeffersonsantiago/Desktop/Project/Project App/Project App/AppDelegate.swift"; sourceTree = "<absolute>"; };
 		5F03379523F4952000C05850 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5F03379723F4952000C05850 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5F03379723F4952000C05850 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "/Users/jeffersonsantiago/Desktop/Project/Project App/Project App/ContentView.swift"; sourceTree = "<absolute>"; };
 		5F03379923F4952200C05850 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F03379C23F4952200C05850 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5F0337A123F4952200C05850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
