@@ -19,6 +19,8 @@ struct ContentView: View {
                     ImageSelectionUI(imageNum: 0)
                     ImageSelectionUI(imageNum: 1)
                     ImageSelectionUI(imageNum: 2)
+                    ImageSelectionUI(imageNum: 3)
+                    ImageSelectionUI(imageNum: 4)
                 }
             }
             .padding()

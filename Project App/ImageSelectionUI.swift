@@ -17,7 +17,7 @@ struct ImageSelectionUI: View {
     // variables such that whenever you there is a changed to the binded variable, it will also
     // affect the state variable.
     @State var showImagePicker: Bool = false
-    @State var image: Image? = Image("Garfield")
+    @State var image: Image? = Image(systemName: "camera.fill")
     @State var showActionSheet:Bool = false
     @State var sourceType: Int = 0
     var imageNum: Int = 0;
