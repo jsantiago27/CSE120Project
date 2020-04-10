@@ -8,6 +8,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct Camera: View {
     // A binded variable that will be binded to the State variable in ContentView
@@ -40,3 +41,4 @@ struct Camera_Previews: PreviewProvider {
             .padding() // Just add padding on all sides
     }
 }
+

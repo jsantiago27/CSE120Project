@@ -16,10 +16,9 @@
 		5F0337B623F4952300C05850 /* Project_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0337B523F4952300C05850 /* Project_AppUITests.swift */; };
 		5F176C4F240F084D001FFEDA /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F176C4E240F084D001FFEDA /* Camera.swift */; };
 		5F176C5124106685001FFEDA /* ImageSelectionUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F176C5024106685001FFEDA /* ImageSelectionUI.swift */; };
+		5F3083E32433F7F900C777A6 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3083E22433F7F900C777A6 /* CameraController.swift */; };
+		5F3FDD6B243FDEE200E0CE68 /* ImagePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3FDD6A243FDEE200E0CE68 /* ImagePreview.swift */; };
 		5F6BABD623F8A57E00E68E2F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6BABD523F8A57E00E68E2F /* ImagePicker.swift */; };
-		5F7A9D0B23F5DE100015C5DE /* RowViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7A9D0A23F5DE100015C5DE /* RowViews.swift */; };
-		5FCE475123F4AAD0009ADD00 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCE475023F4AAD0009ADD00 /* CircleImage.swift */; };
-		5FCE475323F4AC01009ADD00 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCE475223F4AC01009ADD00 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5F03379023F4952000C05850 /* Project App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F03379323F4952000C05850 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "/Users/jeffersonsantiago/Desktop/Project/Project App/Project App/AppDelegate.swift"; sourceTree = "<absolute>"; };
+		5F03379023F4952000C05850 /* CSE 120 Project App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CSE 120 Project App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F03379323F4952000C05850 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F03379523F4952000C05850 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5F03379723F4952000C05850 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "/Users/jeffersonsantiago/Desktop/Project/Project App/Project App/ContentView.swift"; sourceTree = "<absolute>"; };
+		5F03379723F4952000C05850 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5F03379923F4952200C05850 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F03379C23F4952200C05850 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5F0337A123F4952200C05850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,10 +54,9 @@
 		5F0337B723F4952300C05850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F176C4E240F084D001FFEDA /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		5F176C5024106685001FFEDA /* ImageSelectionUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionUI.swift; sourceTree = "<group>"; };
+		5F3083E22433F7F900C777A6 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		5F3FDD6A243FDEE200E0CE68 /* ImagePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreview.swift; sourceTree = "<group>"; };
 		5F6BABD523F8A57E00E68E2F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		5F7A9D0A23F5DE100015C5DE /* RowViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowViews.swift; sourceTree = "<group>"; };
-		5FCE475023F4AAD0009ADD00 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
-		5FCE475223F4AC01009ADD00 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +98,7 @@
 		5F03379123F4952000C05850 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5F03379023F4952000C05850 /* Project App.app */,
+				5F03379023F4952000C05850 /* CSE 120 Project App.app */,
 				5F0337A623F4952300C05850 /* Project AppTests.xctest */,
 				5F0337B123F4952300C05850 /* Project AppUITests.xctest */,
 			);
@@ -116,9 +114,8 @@
 				5F176C5024106685001FFEDA /* ImageSelectionUI.swift */,
 				5F6BABD523F8A57E00E68E2F /* ImagePicker.swift */,
 				5F176C4E240F084D001FFEDA /* Camera.swift */,
-				5F7A9D0A23F5DE100015C5DE /* RowViews.swift */,
-				5FCE475023F4AAD0009ADD00 /* CircleImage.swift */,
-				5FCE475223F4AC01009ADD00 /* MapView.swift */,
+				5F3083E22433F7F900C777A6 /* CameraController.swift */,
+				5F3FDD6A243FDEE200E0CE68 /* ImagePreview.swift */,
 				5F03379923F4952200C05850 /* Assets.xcassets */,
 				5F0337A123F4952200C05850 /* Info.plist */,
 				5F03379B23F4952200C05850 /* Preview Content */,
@@ -169,7 +166,7 @@
 			);
 			name = "Project App";
 			productName = "Project App";
-			productReference = 5F03379023F4952000C05850 /* Project App.app */;
+			productReference = 5F03379023F4952000C05850 /* CSE 120 Project App.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5F0337A523F4952300C05850 /* Project AppTests */ = {
@@ -284,10 +281,9 @@
 			files = (
 				5F176C4F240F084D001FFEDA /* Camera.swift in Sources */,
 				5F03379423F4952000C05850 /* AppDelegate.swift in Sources */,
+				5F3FDD6B243FDEE200E0CE68 /* ImagePreview.swift in Sources */,
 				5F176C5124106685001FFEDA /* ImageSelectionUI.swift in Sources */,
-				5F7A9D0B23F5DE100015C5DE /* RowViews.swift in Sources */,
-				5FCE475123F4AAD0009ADD00 /* CircleImage.swift in Sources */,
-				5FCE475323F4AC01009ADD00 /* MapView.swift in Sources */,
+				5F3083E32433F7F900C777A6 /* CameraController.swift in Sources */,
 				5F6BABD623F8A57E00E68E2F /* ImagePicker.swift in Sources */,
 				5F03379623F4952000C05850 /* SceneDelegate.swift in Sources */,
 				5F03379823F4952000C05850 /* ContentView.swift in Sources */,
@@ -454,7 +450,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "SoftwareEngineering.Project-App";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "CSE 120 Project App";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -474,7 +470,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "SoftwareEngineering.Project-App";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "CSE 120 Project App";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
