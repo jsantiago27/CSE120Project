@@ -14,10 +14,15 @@
 		5F03379D23F4952200C05850 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F03379C23F4952200C05850 /* Preview Assets.xcassets */; };
 		5F0337AB23F4952300C05850 /* Project_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0337AA23F4952300C05850 /* Project_AppTests.swift */; };
 		5F0337B623F4952300C05850 /* Project_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0337B523F4952300C05850 /* Project_AppUITests.swift */; };
-		5F176C4F240F084D001FFEDA /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F176C4E240F084D001FFEDA /* Camera.swift */; };
+		5F176C4F240F084D001FFEDA /* CameraOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F176C4E240F084D001FFEDA /* CameraOverlay.swift */; };
 		5F176C5124106685001FFEDA /* ImageSelectionUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F176C5024106685001FFEDA /* ImageSelectionUI.swift */; };
 		5F3083E32433F7F900C777A6 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3083E22433F7F900C777A6 /* CameraController.swift */; };
 		5F3FDD6B243FDEE200E0CE68 /* ImagePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3FDD6A243FDEE200E0CE68 /* ImagePreview.swift */; };
+		5F3FDD6D24461BD900E0CE68 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3FDD6C24461BD900E0CE68 /* LocationManager.swift */; };
+		5F3FDD74244631CD00E0CE68 /* Dot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3FDD73244631CD00E0CE68 /* Dot.swift */; };
+		5F3FDD76244682D000E0CE68 /* SettingMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3FDD75244682D000E0CE68 /* SettingMenu.swift */; };
+		5F3FDD782446838300E0CE68 /* FinalResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3FDD772446838300E0CE68 /* FinalResultView.swift */; };
+		5F3FDD7A244683F300E0CE68 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3FDD79244683F300E0CE68 /* MapView.swift */; };
 		5F6BABD623F8A57E00E68E2F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6BABD523F8A57E00E68E2F /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,22 +46,27 @@
 /* Begin PBXFileReference section */
 		5F03379023F4952000C05850 /* CSE 120 Project App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CSE 120 Project App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F03379323F4952000C05850 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5F03379523F4952000C05850 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5F03379723F4952000C05850 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		5F03379923F4952200C05850 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5F03379523F4952000C05850 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = "Project App/SceneDelegate.swift"; sourceTree = SOURCE_ROOT; };
+		5F03379723F4952000C05850 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = "Project App/ContentView.swift"; sourceTree = SOURCE_ROOT; };
+		5F03379923F4952200C05850 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Project App/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
 		5F03379C23F4952200C05850 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5F0337A123F4952200C05850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F0337A123F4952200C05850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Project App/Info.plist"; sourceTree = SOURCE_ROOT; };
 		5F0337A623F4952300C05850 /* Project AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F0337AA23F4952300C05850 /* Project_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_AppTests.swift; sourceTree = "<group>"; };
 		5F0337AC23F4952300C05850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F0337B123F4952300C05850 /* Project AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F0337B523F4952300C05850 /* Project_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project_AppUITests.swift; sourceTree = "<group>"; };
 		5F0337B723F4952300C05850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5F176C4E240F084D001FFEDA /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
-		5F176C5024106685001FFEDA /* ImageSelectionUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionUI.swift; sourceTree = "<group>"; };
-		5F3083E22433F7F900C777A6 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
-		5F3FDD6A243FDEE200E0CE68 /* ImagePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreview.swift; sourceTree = "<group>"; };
-		5F6BABD523F8A57E00E68E2F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		5F176C4E240F084D001FFEDA /* CameraOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CameraOverlay.swift; path = "Project App/Support Views/CameraOverlay.swift"; sourceTree = SOURCE_ROOT; };
+		5F176C5024106685001FFEDA /* ImageSelectionUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageSelectionUI.swift; path = "Project App/Support Views/ImageSelectionUI.swift"; sourceTree = SOURCE_ROOT; };
+		5F3083E22433F7F900C777A6 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CameraController.swift; path = "Project App/lib/CameraController.swift"; sourceTree = SOURCE_ROOT; };
+		5F3FDD6A243FDEE200E0CE68 /* ImagePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImagePreview.swift; path = "Project App/Support Views/ImagePreview.swift"; sourceTree = SOURCE_ROOT; };
+		5F3FDD6C24461BD900E0CE68 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = "Project App/lib/LocationManager.swift"; sourceTree = SOURCE_ROOT; };
+		5F3FDD73244631CD00E0CE68 /* Dot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dot.swift; sourceTree = "<group>"; };
+		5F3FDD75244682D000E0CE68 /* SettingMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMenu.swift; sourceTree = "<group>"; };
+		5F3FDD772446838300E0CE68 /* FinalResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalResultView.swift; sourceTree = "<group>"; };
+		5F3FDD79244683F300E0CE68 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		5F6BABD523F8A57E00E68E2F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImagePicker.swift; path = "Project App/lib/ImagePicker.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,14 +118,11 @@
 		5F03379223F4952000C05850 /* Project App */ = {
 			isa = PBXGroup;
 			children = (
+				5F3FDD7024462DB500E0CE68 /* lib */,
+				5F3FDD6E24462D5300E0CE68 /* Support Views */,
 				5F03379323F4952000C05850 /* AppDelegate.swift */,
 				5F03379523F4952000C05850 /* SceneDelegate.swift */,
 				5F03379723F4952000C05850 /* ContentView.swift */,
-				5F176C5024106685001FFEDA /* ImageSelectionUI.swift */,
-				5F6BABD523F8A57E00E68E2F /* ImagePicker.swift */,
-				5F176C4E240F084D001FFEDA /* Camera.swift */,
-				5F3083E22433F7F900C777A6 /* CameraController.swift */,
-				5F3FDD6A243FDEE200E0CE68 /* ImagePreview.swift */,
 				5F03379923F4952200C05850 /* Assets.xcassets */,
 				5F0337A123F4952200C05850 /* Info.plist */,
 				5F03379B23F4952200C05850 /* Preview Content */,
@@ -147,6 +154,30 @@
 				5F0337B723F4952300C05850 /* Info.plist */,
 			);
 			path = "Project AppUITests";
+			sourceTree = "<group>";
+		};
+		5F3FDD6E24462D5300E0CE68 /* Support Views */ = {
+			isa = PBXGroup;
+			children = (
+				5F176C4E240F084D001FFEDA /* CameraOverlay.swift */,
+				5F3FDD73244631CD00E0CE68 /* Dot.swift */,
+				5F176C5024106685001FFEDA /* ImageSelectionUI.swift */,
+				5F3FDD6A243FDEE200E0CE68 /* ImagePreview.swift */,
+				5F3FDD75244682D000E0CE68 /* SettingMenu.swift */,
+				5F3FDD772446838300E0CE68 /* FinalResultView.swift */,
+				5F3FDD79244683F300E0CE68 /* MapView.swift */,
+			);
+			path = "Support Views";
+			sourceTree = "<group>";
+		};
+		5F3FDD7024462DB500E0CE68 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				5F3FDD6C24461BD900E0CE68 /* LocationManager.swift */,
+				5F6BABD523F8A57E00E68E2F /* ImagePicker.swift */,
+				5F3083E22433F7F900C777A6 /* CameraController.swift */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,14 +310,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F176C4F240F084D001FFEDA /* Camera.swift in Sources */,
+				5F176C4F240F084D001FFEDA /* CameraOverlay.swift in Sources */,
 				5F03379423F4952000C05850 /* AppDelegate.swift in Sources */,
 				5F3FDD6B243FDEE200E0CE68 /* ImagePreview.swift in Sources */,
+				5F3FDD74244631CD00E0CE68 /* Dot.swift in Sources */,
+				5F3FDD7A244683F300E0CE68 /* MapView.swift in Sources */,
+				5F3FDD782446838300E0CE68 /* FinalResultView.swift in Sources */,
 				5F176C5124106685001FFEDA /* ImageSelectionUI.swift in Sources */,
 				5F3083E32433F7F900C777A6 /* CameraController.swift in Sources */,
 				5F6BABD623F8A57E00E68E2F /* ImagePicker.swift in Sources */,
+				5F3FDD76244682D000E0CE68 /* SettingMenu.swift in Sources */,
 				5F03379623F4952000C05850 /* SceneDelegate.swift in Sources */,
 				5F03379823F4952000C05850 /* ContentView.swift in Sources */,
+				5F3FDD6D24461BD900E0CE68 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

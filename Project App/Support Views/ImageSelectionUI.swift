@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct ImageSelectionUI: View {
     // State variables are variables that saves it "state" or value when there is an update
@@ -20,6 +21,8 @@ struct ImageSelectionUI: View {
     @State var image: Image? = Image(systemName: "camera.fill")
     @State var showActionSheet:Bool = false
     @State var sourceType: Int = 0
+    @State var focalLength: Double? = 0;
+    @State var location: CLLocation?
     var imageNum: Int = 0;
 
     
@@ -38,7 +41,7 @@ struct ImageSelectionUI: View {
                     
                     Spacer()
                 
-                    Camera(showActionSheet: $showActionSheet)
+                    CameraOverlay(showActionSheet: $showActionSheet)
 
                 }
                 .padding(12)
@@ -57,7 +60,7 @@ struct ImageSelectionUI: View {
                     ])
                 })
                 .sheet(isPresented: self.$showImagePicker) {
-                        ImagePicker(isShown: self.$showImagePicker, image: self.$image, sourceType: self.sourceType)
+                    ImagePicker(isShown: self.$showImagePicker, image: self.$image, focalLength: self.$focalLength, location: self.$location, sourceType: self.sourceType)
                 }
             }
             .background(Color.gray)

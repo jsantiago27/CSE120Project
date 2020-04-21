@@ -7,14 +7,33 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct ContentView: View {
-
+    @ObservedObject var lm = LocationManager()
     @Environment(\.horizontalSizeClass) var sizeHClass: UserInterfaceSizeClass?
     @Environment(\.verticalSizeClass) var sizeVClass: UserInterfaceSizeClass?
+
+    /*
+    // Main Image
+    @State var mainImage: Image?
+    @State var mainImgFocalLen: Double
+    @State var mainPhotoLoc: CLLocation?
+    
+    // Left Image
+    @State var leftImage: Image?
+    @State var leftImgFocalLen: Double
+    @State var leftPhotoLoc: CLLocation?
+    
+    // Right Image
+    @State var rightImage: Image?
+    @State var rightImgFocalLen: Double
+    @State var rightPhotoLoc: CLLocation?
+    */
+    @State var showResult: Bool = false
     
     var body: some View {
-        ZStack {
+        ZStack() {
             Color(#colorLiteral(red: 0.9720847011, green: 0.7606303096, blue: 0.5701220632, alpha: 1))
                 .edgesIgnoringSafeArea(.all)
             
@@ -37,22 +56,26 @@ struct ContentView: View {
 
                 VStack {
                     ImagePreview(top: true, imageName: "Main Image")
-                        .padding(.bottom, 10.0)
-                    HStack(spacing: 20.0) {
-                       ImagePreview(top: false, imageName: "Left Side Image")
+                    //    .padding(.bottom, 10.0)
+                    
+                   // HStack(spacing: 20.0) {
+                        ImagePreview(top: false, imageName: "Left Side Image")
                         ImagePreview(top: false, imageName: "Right Side Image")
-                    }
-                    .padding(.bottom, 20.0)
+                    //}
+                    .padding(.bottom, 10.0)
+                    
+                    
                     
                     Button(action: {
-                        
-                    }) {
+                        self.showResult.toggle()
+                    }, label: {
                         Text("Pinpoint")
-                        
-                    }
-                    .padding(.horizontal, 20.0)
-                    .padding(.vertical, 5.0)
-                    .background(Color(hue: 0.105, saturation: 0.201, brightness: 0.982))
+                        .padding(.horizontal, 20.0)
+                        .padding(.vertical, 5.0)
+                        .background(Color(hue: 0.105, saturation: 0.201, brightness: 0.982))
+                    }).sheet(isPresented: $showResult, content: {
+                        FinalResultView()
+                    })
                 }
                 .padding(.bottom, 50.0)
             }
@@ -65,11 +88,9 @@ struct ContentView: View {
                     .clipShape(Circle())
                     .frame(width:25, height: 25)
                     .foregroundColor(Color.black)
-                    .offset(x:130, y: -290)
+                    .offset(x:150, y: -320)
             }
-            
         }
-        
     }
 }
 

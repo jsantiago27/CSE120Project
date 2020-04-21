@@ -10,7 +10,7 @@
 import SwiftUI
 import AVFoundation
 
-struct Camera: View {
+struct CameraOverlay: View {
     // A binded variable that will be binded to the State variable in ContentView
     @Binding var showActionSheet: Bool
     var body: some View {
@@ -34,9 +34,9 @@ struct Camera: View {
     }
 }
 
-struct Camera_Previews: PreviewProvider {
+struct CameraOverlay_Previews: PreviewProvider {
     static var previews: some View {
-        Camera(showActionSheet: .constant(false))
+        CameraOverlay(showActionSheet: .constant(false))
             .previewLayout(.sizeThatFits) // scales the canvas to fit the image
             .padding() // Just add padding on all sides
     }
