@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FC600C6244FB9BC00B752A2 /* Delaunays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC600C5244FB9BC00B752A2 /* Delaunays.swift */; };
 		5F03379423F4952000C05850 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F03379323F4952000C05850 /* AppDelegate.swift */; };
 		5F03379623F4952000C05850 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F03379523F4952000C05850 /* SceneDelegate.swift */; };
 		5F03379823F4952000C05850 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F03379723F4952000C05850 /* ContentView.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1FC600C5244FB9BC00B752A2 /* Delaunays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delaunays.swift; sourceTree = "<group>"; };
 		5F03379023F4952000C05850 /* CSE 120 Project App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CSE 120 Project App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F03379323F4952000C05850 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F03379523F4952000C05850 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = "Project App/SceneDelegate.swift"; sourceTree = SOURCE_ROOT; };
@@ -176,6 +178,7 @@
 				5F3FDD6C24461BD900E0CE68 /* LocationManager.swift */,
 				5F6BABD523F8A57E00E68E2F /* ImagePicker.swift */,
 				5F3083E22433F7F900C777A6 /* CameraController.swift */,
+				1FC600C5244FB9BC00B752A2 /* Delaunays.swift */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				5F3FDD782446838300E0CE68 /* FinalResultView.swift in Sources */,
 				5F176C5124106685001FFEDA /* ImageSelectionUI.swift in Sources */,
 				5F3083E32433F7F900C777A6 /* CameraController.swift in Sources */,
+				1FC600C6244FB9BC00B752A2 /* Delaunays.swift in Sources */,
 				5F6BABD623F8A57E00E68E2F /* ImagePicker.swift in Sources */,
 				5F3FDD76244682D000E0CE68 /* SettingMenu.swift in Sources */,
 				5F03379623F4952000C05850 /* SceneDelegate.swift in Sources */,
