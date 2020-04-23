@@ -25,6 +25,7 @@
 		5F3FDD782446838300E0CE68 /* FinalResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3FDD772446838300E0CE68 /* FinalResultView.swift */; };
 		5F3FDD7A244683F300E0CE68 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3FDD79244683F300E0CE68 /* MapView.swift */; };
 		5F6BABD623F8A57E00E68E2F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6BABD523F8A57E00E68E2F /* ImagePicker.swift */; };
+		5F837C77245028DD00848DED /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F837C76245028DD00848DED /* ImageData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		5F3FDD772446838300E0CE68 /* FinalResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalResultView.swift; sourceTree = "<group>"; };
 		5F3FDD79244683F300E0CE68 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		5F6BABD523F8A57E00E68E2F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImagePicker.swift; path = "Project App/lib/ImagePicker.swift"; sourceTree = SOURCE_ROOT; };
+		5F837C76245028DD00848DED /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 				5F6BABD523F8A57E00E68E2F /* ImagePicker.swift */,
 				5F3083E22433F7F900C777A6 /* CameraController.swift */,
 				1FC600C5244FB9BC00B752A2 /* Delaunays.swift */,
+				5F837C76245028DD00848DED /* ImageData.swift */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				5F3FDD782446838300E0CE68 /* FinalResultView.swift in Sources */,
 				5F176C5124106685001FFEDA /* ImageSelectionUI.swift in Sources */,
 				5F3083E32433F7F900C777A6 /* CameraController.swift in Sources */,
+				5F837C77245028DD00848DED /* ImageData.swift in Sources */,
 				1FC600C6244FB9BC00B752A2 /* Delaunays.swift in Sources */,
 				5F6BABD623F8A57E00E68E2F /* ImagePicker.swift in Sources */,
 				5F3FDD76244682D000E0CE68 /* SettingMenu.swift in Sources */,

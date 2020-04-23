@@ -8,14 +8,18 @@
 
 import SwiftUI
 import CoreLocation
+import Combine
+
 
 struct ImagePreview: View {
     
-    @State var showImagePicker: Bool = false
-    @State var sourceType: Int = 0
-    @State var imageMain: Image? = Image(systemName: "camera.fill")
-    @State var focalLengthMain: Double? = 0
-    @State var photoLocation: CLLocation?
+    @State private var showImagePicker: Bool = false
+    @State private var sourceType: Int = 0
+    @State private var imageMain: Image? = Image(systemName: "camera.fill")
+    @State private var focalLengthMain: Double? = 0
+    @State private var photoLocation: CLLocation?
+    
+    @Binding var imageData: ImageData
     
     var top: Bool
     var imageName: String
@@ -81,6 +85,7 @@ struct ImagePreview: View {
             
             Button(action: {
                 self.showImagePicker.toggle()
+                self.imageData = ImageData(image: self.imageMain ?? Image("Garfield"), location: self.photoLocation ?? CLLocation(), focalLength: self.focalLengthMain ?? 0)
             }) {
                 Text("Image \(imageName)")
                     .font(.footnote)
@@ -100,6 +105,8 @@ struct ImagePreview: View {
             .overlay(
                 Dot()
             )
+            
+            
         }
         .padding(10)
         
@@ -108,6 +115,7 @@ struct ImagePreview: View {
 
 struct ImagePreview_Previews: PreviewProvider {
     static var previews: some View {
-        ImagePreview(top: true, imageName: "Main Image")
+        ImagePreview(imageData: Binding<ImageData>, top: true, imageName: "Main Image")
+        
     }
 }

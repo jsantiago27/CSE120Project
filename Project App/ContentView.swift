@@ -14,22 +14,7 @@ struct ContentView: View {
     @Environment(\.horizontalSizeClass) var sizeHClass: UserInterfaceSizeClass?
     @Environment(\.verticalSizeClass) var sizeVClass: UserInterfaceSizeClass?
 
-    /*
-    // Main Image
-    @State var mainImage: Image?
-    @State var mainImgFocalLen: Double
-    @State var mainPhotoLoc: CLLocation?
     
-    // Left Image
-    @State var leftImage: Image?
-    @State var leftImgFocalLen: Double
-    @State var leftPhotoLoc: CLLocation?
-    
-    // Right Image
-    @State var rightImage: Image?
-    @State var rightImgFocalLen: Double
-    @State var rightPhotoLoc: CLLocation?
-    */
     @State var showResult: Bool = false
     
     var body: some View {
