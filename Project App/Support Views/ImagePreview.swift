@@ -69,13 +69,13 @@ struct ImagePreview: View {
                  */
             
                 
-                Text(String("Focal Length: \(focalLengthMain ?? 0)"))
+                Text(String("Focal Length: \(imageData.focalLength)"))
                     .font(.subheadline)
                 
-                Text(String("Longitude: \(photoLocation?.coordinate.longitude ?? 0)"))
+                Text(String("Longitude: \(imageData.location.coordinate.longitude)"))
                     .font(.subheadline)
                     
-                Text(String("Latitude: \(photoLocation?.coordinate.latitude ?? 0)"))
+                Text(String("Latitude: \(imageData.location.coordinate.latitude)"))
                     .font(.subheadline)
             }
             .frame(width: 150, height: 150)
@@ -114,8 +114,10 @@ struct ImagePreview: View {
 }
 
 struct ImagePreview_Previews: PreviewProvider {
+    @State static var imageData: ImageData = ImageData()
+    
     static var previews: some View {
-        ImagePreview(imageData: Binding<ImageData>, top: true, imageName: "Main Image")
+        ImagePreview(imageData: self.$imageData, top: true, imageName: "Main Image")
         
     }
 }

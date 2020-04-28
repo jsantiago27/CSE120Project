@@ -17,6 +17,10 @@ struct ContentView: View {
     
     @State var showResult: Bool = false
     
+    @State var mainImage: ImageData
+    @State var leftImage: ImageData
+    @State var rightImage: ImageData
+    
     var body: some View {
         ZStack() {
             Color(#colorLiteral(red: 0.9720847011, green: 0.7606303096, blue: 0.5701220632, alpha: 1))
@@ -40,12 +44,12 @@ struct ContentView: View {
                 Spacer()
 
                 VStack {
-                    ImagePreview(top: true, imageName: "Main Image")
+                    ImagePreview(imageData: $mainImage, top: true, imageName: "Main Image")
                     //    .padding(.bottom, 10.0)
                     
                    // HStack(spacing: 20.0) {
-                        ImagePreview(top: false, imageName: "Left Side Image")
-                        ImagePreview(top: false, imageName: "Right Side Image")
+                        ImagePreview(imageData: $leftImage, top: false, imageName: "Left Side Image")
+                        ImagePreview(imageData: $rightImage, top: false, imageName: "Right Side Image")
                     //}
                     .padding(.bottom, 10.0)
                     
@@ -81,6 +85,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(mainImage: , leftImage: ImageData(), rightImage: ImageData())
     }
 }

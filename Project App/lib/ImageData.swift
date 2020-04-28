@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 import SwiftUI
 
-class ImageData : ObservableObject{
+class ImageData {
     
     var image: Image!
     var location: CLLocation!
@@ -27,5 +27,4 @@ class ImageData : ObservableObject{
         self.location    = location
         self.focalLength = focalLength
     }
-    
 }
