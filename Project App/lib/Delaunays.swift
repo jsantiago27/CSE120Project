@@ -7,15 +7,36 @@
 //
 
 import Foundation
-
-//A - focal length w/ GPS coordinates
-
-//B - focal length w/ GPS coordinates
-
-//C -focal length w/ GPS coordinates
+import CoreLocation
 
 // point of interest
 
+class Delaunays {
+    var mainImage: ImageData
+    var leftImage: ImageData
+    var rightImage: ImageData
+    
+    init(mainImage: ImageData, leftImage: ImageData, rightImage: ImageData) {
+        self.mainImage = mainImage
+        self.leftImage = leftImage
+        self.rightImage = rightImage
+    }
+    
+    func findPinpoit() -> CLLocation {
+        //A - focal length w/ GPS coordinates
+        var focA = mainImage.focalLength
+        var locationA = mainImage.location
+        //B - focal length w/ GPS coordinates
+        var focB = rightImage.focalLength
+        var locationB = rightImage.location
+        //C -focal length w/ GPS coordinates
+        var focC = leftImage.focalLength
+        var locationC = leftImage.location
+        
+        var B_length =
+    
+    }
+}
 
 /*
  Blue and Red Triangle information
