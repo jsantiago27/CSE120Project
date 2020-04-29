@@ -36,6 +36,10 @@ class Delaunays {
         var B_length =
     
     }
+    
+    private func realHeight() -> Double {
+        
+    }
 }
 
 /*

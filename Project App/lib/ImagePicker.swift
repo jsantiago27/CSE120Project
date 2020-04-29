@@ -20,6 +20,7 @@ struct ImagePicker : UIViewControllerRepresentable {
     @Binding var image: Image?
     @Binding var focalLength: Double?
     @Binding var location: CLLocation?
+    @Binding var zoomFactor: Double?
     
     var sourceType: Int
     //
@@ -31,7 +32,7 @@ struct ImagePicker : UIViewControllerRepresentable {
     // Return the variables that we Instantiated from the class Coordinator
     // This method handles the inputs of the user
     func makeCoordinator() -> Coordinator {
-        return Coordinator(isShown: $isShown, image: $image, focalLength: $focalLength, location: $location)
+        return Coordinator(isShown: $isShown, image: $image, focalLength: $focalLength, location: $location, zoomFactor: $zoomFactor)
     }
     
     // This will handle the user image picks
@@ -59,13 +60,14 @@ class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerContro
     @Binding var image: Image? // Check if its nil (null) or not.
     @Binding var focalLength: Double?
     @Binding var location: CLLocation?
-    
+    @Binding var zoomFactor: Double?
     // Instantiate based on specific parameters
-    init(isShown: Binding<Bool>, image: Binding<Image?>,  focalLength: Binding<Double?>, location: Binding<CLLocation?>) {
+    init(isShown: Binding<Bool>, image: Binding<Image?>,  focalLength: Binding<Double?>, location: Binding<CLLocation?>, zoomFactor: Binding<Double?>) {
         _isShown = isShown
         _image = image
         _focalLength = focalLength
         _location = location
+        _zoomFactor = zoomFactor
     }
     
     // Handles the user's input when he looking in the photo library or captured the image
@@ -76,6 +78,7 @@ class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerContro
         image = Image(uiImage: uiImage)
         isShown = false
         focalLength = (exifdata["FocalLength"] as! Double)
+        zoomFactor = (exifdata["DigitalZoomRatio"] as! Double)
         location = locationManager.loc
     }
     

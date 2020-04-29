@@ -104,7 +104,7 @@ struct ImagePreview: View {
             //self.locationManager.requestWhenInUseAuthorization()
             
             //ImagePicker(isShown: self.$showImagePicker, isShown: self.$imageMain, image: self.$focalLengthMain, focalLength: self.sourceType, location: self.$photoLocation)
-            ImagePicker(isShown: self.$showImagePicker, image: self.$imageData.image, focalLength: self.$imageData.focalLength, location: self.$imageData.location, sourceType: self.sourceType)
+            ImagePicker(isShown: self.$showImagePicker, image: self.$imageData.image, focalLength: self.$imageData.focalLength, location: self.$imageData.location, zoomFactor: self.$imageData.magnification, sourceType: self.sourceType)
             .overlay(
                 Dot()
             )
