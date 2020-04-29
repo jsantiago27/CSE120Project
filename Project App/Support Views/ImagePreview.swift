@@ -15,11 +15,14 @@ struct ImagePreview: View {
     
     @State private var showImagePicker: Bool = false
     @State private var sourceType: Int = 0
-    @State private var imageMain: Image? = Image(systemName: "camera.fill")
-    @State private var focalLengthMain: Double? = 0
-    @State private var photoLocation: CLLocation?
+    //@State private var imageMain: Image? = Image(systemName: "camera.fill")
+    //@State private var focalLengthMain: Double? = 0
+    //@State private var photoLocation: CLLocation?
     
-    @Binding var imageData: ImageData
+    @ObservedObject var imageData: ImageData = ImageData()
+    
+    
+    //@Binding var imageData: ImageData
     
     var top: Bool
     var imageName: String
@@ -43,7 +46,7 @@ struct ImagePreview: View {
            }
              */
             VStack(alignment: .leading) {
-                imageMain?
+                imageData.image
                     .resizable()
                     .scaledToFit()
                     //.overlay(Rectangle().stroke(Color.white, lineWidth: 2))
@@ -69,7 +72,7 @@ struct ImagePreview: View {
                  */
             
                 
-                Text(String("Focal Length: \(imageData.focalLength)"))
+                Text(String("Focal Length: \(imageData.focalLength ?? 0)"))
                     .font(.subheadline)
                 
                 Text(String("Longitude: \(imageData.location.coordinate.longitude)"))
@@ -85,7 +88,7 @@ struct ImagePreview: View {
             
             Button(action: {
                 self.showImagePicker.toggle()
-                self.imageData = ImageData(image: self.imageMain ?? Image("Garfield"), location: self.photoLocation ?? CLLocation(), focalLength: self.focalLengthMain ?? 0)
+                //self.imageData = ImageData(image: self.imageMain ?? Image("Garfield"), location: self.photoLocation ?? CLLocation(), focalLength: self.focalLengthMain ?? 0)
             }) {
                 Text("Image \(imageName)")
                     .font(.footnote)
@@ -101,7 +104,7 @@ struct ImagePreview: View {
             //self.locationManager.requestWhenInUseAuthorization()
             
             //ImagePicker(isShown: self.$showImagePicker, isShown: self.$imageMain, image: self.$focalLengthMain, focalLength: self.sourceType, location: self.$photoLocation)
-            ImagePicker(isShown: self.$showImagePicker, image: self.$imageMain, focalLength: self.$focalLengthMain, location: self.$photoLocation, sourceType: self.sourceType)
+            ImagePicker(isShown: self.$showImagePicker, image: self.$imageData.image, focalLength: self.$imageData.focalLength, location: self.$imageData.location, sourceType: self.sourceType)
             .overlay(
                 Dot()
             )
@@ -114,10 +117,10 @@ struct ImagePreview: View {
 }
 
 struct ImagePreview_Previews: PreviewProvider {
-    @State static var imageData: ImageData = ImageData()
+    //@ObservedObject static var imageData: ImageData = ImageData()
     
     static var previews: some View {
-        ImagePreview(imageData: self.$imageData, top: true, imageName: "Main Image")
+        ImagePreview(top: true, imageName: "Main Image")
         
     }
 }

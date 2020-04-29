@@ -8,6 +8,7 @@
 
 import SwiftUI
 import CoreLocation
+import Combine
 
 struct ContentView: View {
     @ObservedObject var lm = LocationManager()
@@ -17,9 +18,9 @@ struct ContentView: View {
     
     @State var showResult: Bool = false
     
-    @State var mainImage: ImageData
-    @State var leftImage: ImageData
-    @State var rightImage: ImageData
+    @ObservedObject var mainImage: ImageData
+    @ObservedObject var leftImage: ImageData
+    @ObservedObject var rightImage: ImageData
     
     var body: some View {
         ZStack() {
@@ -44,12 +45,12 @@ struct ContentView: View {
                 Spacer()
 
                 VStack {
-                    ImagePreview(imageData: $mainImage, top: true, imageName: "Main Image")
+                    ImagePreview(imageData: mainImage, top: true, imageName: "Main Image")
                     //    .padding(.bottom, 10.0)
                     
                    // HStack(spacing: 20.0) {
-                        ImagePreview(imageData: $leftImage, top: false, imageName: "Left Side Image")
-                        ImagePreview(imageData: $rightImage, top: false, imageName: "Right Side Image")
+                    ImagePreview(imageData: leftImage, top: false, imageName: "Left Side Image")
+                    ImagePreview(imageData: rightImage, top: false, imageName: "Right Side Image")
                     //}
                     .padding(.bottom, 10.0)
                     
@@ -85,6 +86,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(mainImage: , leftImage: ImageData(), rightImage: ImageData())
+        ContentView(mainImage: ImageData(), leftImage: ImageData(), rightImage: ImageData())
     }
 }

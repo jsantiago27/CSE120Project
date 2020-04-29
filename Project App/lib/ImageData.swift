@@ -9,12 +9,13 @@
 import Foundation
 import CoreLocation
 import SwiftUI
+import Combine
 
-class ImageData {
+class ImageData : ObservableObject {
     
-    var image: Image!
-    var location: CLLocation!
-    var focalLength: Double
+    @Published var image: Image!
+    @Published var location: CLLocation!
+    @Published var focalLength: Double?
     
     init() {
         self.image = Image("Garfield")
@@ -28,3 +29,4 @@ class ImageData {
         self.focalLength = focalLength
     }
 }
+
