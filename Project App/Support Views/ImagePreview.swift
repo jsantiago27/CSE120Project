@@ -70,41 +70,51 @@ struct ImagePreview: View {
                     
                 }
                  */
-            
-                
-                Text(String("Focal Length: \(imageData.focalLength ?? 0)"))
-                    .font(.subheadline)
-                
-                Text(String("Longitude: \(imageData.location.coordinate.longitude)"))
-                    .font(.subheadline)
-                    
-                Text(String("Latitude: \(imageData.location.coordinate.latitude)"))
-                    .font(.subheadline)
+
             }
             .frame(width: 150, height: 150)
             //.padding(.horizontal, 20.0)
             
             Spacer()
             
-            Button(action: {
-                self.showImagePicker.toggle()
-                //self.imageData = ImageData(image: self.imageMain ?? Image("Garfield"), location: self.photoLocation ?? CLLocation(), focalLength: self.focalLengthMain ?? 0)
-            }) {
-                Text("Image \(imageName)")
-                    .font(.footnote)
-                    .multilineTextAlignment(.center)
-                    .foregroundColor(Color.black)
-            }
-            .padding(10)
-            .frame(width: 150.0)
-            .background(Color.green)
-            .padding(.bottom, 10)
+            VStack(alignment: .leading) {
+                Text(String("Focal Length: \(imageData.focalLength())"))
+                    .font(.caption)
+                    .fontWeight(.thin)
+                
+                Text(String("Magnification: \(imageData.magnification())"))
+                    .font(.caption)
+                    .fontWeight(.thin)
+                
+                Text(String("Longitude: \(imageData.location.coordinate.longitude)"))
+                    .font(.caption)
+                    .fontWeight(.thin)
+                    
+                Text(String("Latitude: \(imageData.location.coordinate.latitude)"))
+                    .font(.caption)
+                    .fontWeight(.thin)
+                
+                Button(action: {
+                    self.showImagePicker.toggle()
+                    //self.imageData = ImageData(image: self.imageMain ?? Image("Garfield"), location: self.photoLocation ?? CLLocation(), focalLength: self.focalLengthMain ?? 0)
+                }) {
+                    Text("Image\n(imageName)")
+                        .font(.footnote)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(Color.black)
+                        .lineLimit(2)
+                }
+                .padding(10)
+                .frame(width: 150.0)
+                .background(Color.green)
+                .padding(.vertical, 10)
             
+            }
         }.sheet(isPresented: self.$showImagePicker) {
             //self.locationManager.requestWhenInUseAuthorization()
             
             //ImagePicker(isShown: self.$showImagePicker, isShown: self.$imageMain, image: self.$focalLengthMain, focalLength: self.sourceType, location: self.$photoLocation)
-            ImagePicker(isShown: self.$showImagePicker, image: self.$imageData.image, focalLength: self.$imageData.focalLength, location: self.$imageData.location, zoomFactor: self.$imageData.magnification, sourceType: self.sourceType)
+            ImagePicker(isShown: self.$showImagePicker, image: self.$imageData.image, location: self.$imageData.location, imgMetaData: self.$imageData.imgMetaData, sourceType: self.sourceType)
             .overlay(
                 Dot()
             )

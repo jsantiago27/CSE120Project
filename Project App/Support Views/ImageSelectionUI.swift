@@ -21,8 +21,8 @@ struct ImageSelectionUI: View {
     @State var image: Image? = Image(systemName: "camera.fill")
     @State var showActionSheet:Bool = false
     @State var sourceType: Int = 0
-    @State var focalLength: Double? = 0;
     @State var location: CLLocation?
+    @State var imgMetaData: NSDictionary?
     var imageNum: Int = 0;
 
     
@@ -60,7 +60,7 @@ struct ImageSelectionUI: View {
                     ])
                 })
                 .sheet(isPresented: self.$showImagePicker) {
-                    ImagePicker(isShown: self.$showImagePicker, image: self.$image, focalLength: self.$focalLength, location: self.$location, sourceType: self.sourceType)
+                    ImagePicker(isShown: self.$showImagePicker, image: self.$image, location: self.$location, imgMetaData: self.$imgMetaData, sourceType: self.sourceType)
                 }
             }
             .background(Color.gray)
