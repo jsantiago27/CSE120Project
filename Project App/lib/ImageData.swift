@@ -22,9 +22,9 @@ import Combine
 
 class ImageData : ObservableObject {
     
-    @Published var image: Image!
-    @Published var location: CLLocation!
-    @Published var imgMetaData: NSDictionary?
+    @Published public var image: Image!
+    @Published public var location: CLLocation!
+    @Published public var imgMetaData: NSDictionary?
     
     init() {
         self.image = Image("Garfield")
@@ -40,7 +40,7 @@ class ImageData : ObservableObject {
     
     // Function that returns the focal length of the camera used to take
     // the image
-    func focalLength() -> Double {
+    public func focalLength() -> Double {
         var focLen: Double = 0
         
         let tempData = self.imgMetaData
@@ -53,7 +53,7 @@ class ImageData : ObservableObject {
         return focLen
     }
     
-    func magnification() -> Double {
+    public func magnification() -> Double {
         var magnification: Double = 1 // Default Zoom of the camera
         
         let tempData = self.imgMetaData
@@ -73,3 +73,9 @@ class ImageData : ObservableObject {
     }
 }
 
+
+struct ImageData_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+    }
+}

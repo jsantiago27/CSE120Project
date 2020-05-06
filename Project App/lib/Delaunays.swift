@@ -9,39 +9,24 @@
 import Foundation
 import CoreLocation
 
-/*
-Blue and Red Triangle information
-1. Object distance from point B (l_2)
-2. Point distance of A-->B  (point slope formula) --> midpoint AB/2
-3. alpha_3 = cos^-1( (AB/2) / l_2)
-4. beta_2_half= 180-90-alpha_3
-   beta_2 = 2* beta_2_half
-5. Object distance from point C (l_3)
-6. Point distance of A-->C  (point slope formula) --> midpoint AC/2
-7. alpha_4 = cos^-1( (AC/2) / l_3)
-8. beta_1_half=180-90-alpha_4
-9. beta_1 = 2*beta_1_half
-
-Green Triangle Information
-10. Calculate l_1 (object distance from point A)
-10. Find the distance between AB/2 and AC/2  = DE
-10. Mid point of DE = DE/2 = mid_DE
-11. alpha_2= cos^-1((AB)/2)/l_1)
-12. alpha_5= 180-90-alpha_3
-13. alpha_6 = 90 - alpha_5
-14. hypotnuse* cos(alpha_2) = D_2
-15. l_2*cos(alpha_3) = l_5
-16. D_1= l_5*sin(alpha_6)
-
-True Object Distance = A * coordinate_length(D_1) + coordinate_length(D_2)
-*/
-
-
 // Main Class
 class Delaunays {
     var mainImage: ImageData
     var leftImage: ImageData
     var rightImage: ImageData
+    var mag_left: Double
+    var mag_main: Double
+    var mag_right: Double
+    var focA=0
+    var locationA=0
+    var focB=0
+    var locationB=0
+    var focC=0
+    var locationC=0
+    var oheight_right: Double
+    var oheight_main = Double
+    var oheight_left = Double
+    
     
     init(mainImage: ImageData, leftImage: ImageData, rightImage: ImageData) {
         self.mainImage = mainImage
@@ -67,7 +52,7 @@ extension Delaunays {
 // Calculation
 extension Delaunays {
     
-    func findPinpoit() -> CLLocation {
+    func findPinpoint() -> CLLocation {
         //A - focal length w/ GPS coordinates
         var focA = mainImage.focalLength()
         var locationA = mainImage.location
@@ -77,8 +62,50 @@ extension Delaunays {
         //C -focal length w/ GPS coordinates
         var focC = leftImage.focalLength()
         var locationC = leftImage.location
+ 
+        mag_right = rightImage.magnification()
+        mag_main = mainImage.magnification()
+        mag_left = leftImage.magnification()
         
-        var B_length = 0
+        let exifData1 = rightImage.imgMetaData!["{Image Height}"] as Double
+        let exifData2 = mainImage.imgMetaData!["{Image Height}"] as Double
+        let exifData3 = leftImage.imgMetaData!["{Image Height}"] as Double
+        
+        oheight_right = exifData1/mag_right
+        oheight_main = exifData2/mag_main
+        oheight_left = exifData3/mag_left
+        
+        var fB_theta1 = atan(exifData1/focB)
+        var fB_theta2 = 180-fB_theta1
+        var B_olength = oheight_right/tan(fB_theta2)
+        
+        var fC_theta1 = atan(exifData3/focC)
+        var fC_theta2 = 180-fC_theta1
+        var C_olength = oheight_left/tan(fC_theta2)
+        
+        //getting coordinates of midpoint (adding longitude  and latitude)
+        var mid_AB = findMidpoint(locA: locationA, locB: locationB) + locationA
+        var mid_CA = findMidpoint(locA: locationC, locB: locationA) + locationC
+        
+        var alpha_B = acos(mid_AB/B_olength)
+        var alpha_C = acos(mid_CA/C_olength)
+        var midAB_length = B_olength * sin(alpha_B)
+        var midCA_length = C_olength * sin(alpha_C)
+        
+        //is this the length
+        var alpha_AB = atan(midAB_length/mid_AB)
+        var alpha_CA = atan(midCA_length/mid_CA)
+        
+        var alpha_1A = 180 - 90 - alpha_AB
+        var alpha1A_inv = 90 - alpha_1A
+        
+        var A1_length = mid_AB * cos(alpha_AB)
+        var A2_length = midAB_length * sin(alpha1A_inv)
+        
+        var A_totalLength = A1_length + A2_length
+        
+        var object_distance = locationA + A_totalLength
+        
         
         return CLLocation()
     }
