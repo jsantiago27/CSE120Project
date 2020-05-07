@@ -13,9 +13,12 @@ import MapKit
 
 struct FinalResultView: View {
     
+    
+    var location: Delaunays
+
     var body: some View {
         VStack(alignment: .center, spacing: 10.0) {
-            MapView()
+            MapView(latitude: location.findPinpoint().coordinate.latitude, longitude: location.findPinpoint().coordinate.longitude)
                 .frame(height: 500)
             
             Text("Point of Interest Location")
@@ -40,6 +43,6 @@ struct FinalResultView: View {
 
 struct FinalResultView_Previews: PreviewProvider {
     static var previews: some View {
-        FinalResultView()
+        FinalResultView(location: Delaunays())
     }
 }

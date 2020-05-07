@@ -64,7 +64,7 @@ struct ContentView: View {
                         .padding(.vertical, 5.0)
                         .background(Color(hue: 0.105, saturation: 0.201, brightness: 0.982))
                     }).sheet(isPresented: $showResult, content: {
-                        FinalResultView()
+                        FinalResultView(location: Delaunays(mainImage: self.mainImage, leftImage: self.leftImage, rightImage: self.rightImage))
                     })
                 }
                 .padding(.bottom, 50.0)
