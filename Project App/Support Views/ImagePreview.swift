@@ -29,51 +29,22 @@ struct ImagePreview: View {
     
     var body: some View {
         HStack {
-            
-           /*if(top) {
-               Button(action: {
-                   self.showImagePicker = true
-                    
-               }) {
-                   Text("Image \(imageName)")
-                       .font(.footnote)
-                       .multilineTextAlignment(.center)
-                       .foregroundColor(Color.black)
-               }
-               .padding(10)
-               .background(Color.green)
-               .padding(.bottom, 10)
-           }
-             */
-            VStack(alignment: .leading) {
+            Button(action: {
+                self.showImagePicker.toggle()
+            }) {
+                Text(" ")
+                    .frame(width: 180, height: 180)
+            }
+            .background(
                 imageData.image
                     .resizable()
+                    .frame(width: 180, height: 180)
                     .scaledToFit()
-                    //.overlay(Rectangle().stroke(Color.white, lineWidth: 2))
                     .shadow(radius: 5)
-                    .frame(width: 120, height: 120)
-                    .padding(5)
-                
-                /*
-                if(top == false) {
-                    Button(action: {
-                        self.showImagePicker = true
-                    }) {
-                        Text("Image \(imageName)")
-                            .font(.footnote)
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(Color.black)
-                    }
-                    .padding(10)
-                    .background(Color.green)
-                    .padding(.top, 10)
-                    
-                }
-                 */
-
-            }
-            .frame(width: 150, height: 150)
-            //.padding(.horizontal, 20.0)
+            )
+            .frame(width: 120, height: 120)
+            .padding(5)
+                .padding(.leading, 30)
             
             Spacer()
             
@@ -94,6 +65,10 @@ struct ImagePreview: View {
                     .font(.caption)
                     .fontWeight(.thin)
                 
+                Text(String("Object Height: \(imageData.objectHeight())"))
+                .font(.caption)
+                .fontWeight(.thin)
+                /*
                 Button(action: {
                     self.showImagePicker.toggle()
                     //self.imageData = ImageData(image: self.imageMain ?? Image("Garfield"), location: self.photoLocation ?? CLLocation(), focalLength: self.focalLengthMain ?? 0)
@@ -108,20 +83,16 @@ struct ImagePreview: View {
                 .frame(width: 150.0)
                 .background(Color.green)
                 .padding(.vertical, 10)
+                */
             
             }
         }.sheet(isPresented: self.$showImagePicker) {
-            //self.locationManager.requestWhenInUseAuthorization()
-            
-            //ImagePicker(isShown: self.$showImagePicker, isShown: self.$imageMain, image: self.$focalLengthMain, focalLength: self.sourceType, location: self.$photoLocation)
             ImagePicker(isShown: self.$showImagePicker, image: self.$imageData.image, location: self.$imageData.location, imgMetaData: self.$imageData.imgMetaData, sourceType: self.sourceType)
             .overlay(
                 Dot()
             )
-            
-            
         }
-        .padding(10)
+        .padding(30)
         
     }
 }

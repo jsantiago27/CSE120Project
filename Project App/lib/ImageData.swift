@@ -71,6 +71,25 @@ class ImageData : ObservableObject {
         
         return magnification
     }
+    
+    public func imageHeight() -> Double {
+        
+        let tempData = self.imgMetaData
+        var imageHeight: Double = 0
+        if(tempData != nil) {
+            let exifData = tempData!["{Exif}"] as? NSDictionary
+            
+            if(exifData?["PixelYDimension"] != nil) {
+                imageHeight = (exifData?["PixelYDimension"] as! Double)
+            }
+        }
+        
+        return (imageHeight*0.352778)
+    }
+    
+    public func sensorHeight(focalLength: Double) -> Double {
+        
+    }
 }
 
 

@@ -16,11 +16,18 @@ struct Dot: View {
                 .multilineTextAlignment(.center)
                 .padding(10)
             
-            Circle()
-                .offset(y: -85)
-                .foregroundColor(Color.gray)
-                .shadow(radius: 10)
-                .frame(width: 8)
+            ZStack() {
+                Circle()
+                    .foregroundColor(Color(red: 0, green: 1, blue: 1))
+                    .shadow(radius: 10)
+                    .frame(width: 8)
+                
+                Rectangle()
+                    .frame(width:200, height: 200)
+                    .opacity(0)
+                    .border(Color(red: 0, green: 1, blue: 1))
+            }
+            .offset(y: -95)
                 
         }
     }
