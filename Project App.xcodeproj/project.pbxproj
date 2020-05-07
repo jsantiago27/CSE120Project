@@ -486,14 +486,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Project App/Preview Content\"";
-				DEVELOPMENT_TEAM = V33T647PM8;
+				DEVELOPMENT_TEAM = 8P6LRC6D3J;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Project App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Project-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "SoftwareEngineering.Project-App";
 				PRODUCT_NAME = "CSE 120 Project App";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -506,7 +506,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Project App/Preview Content\"";
-				DEVELOPMENT_TEAM = V33T647PM8;
+				DEVELOPMENT_TEAM = 8P6LRC6D3J;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Project App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

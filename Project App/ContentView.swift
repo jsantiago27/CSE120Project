@@ -60,11 +60,11 @@ struct ContentView: View {
                         self.showResult.toggle()
                     }, label: {
                         Text("Pinpoint")
-                        .padding(.horizontal, 20.0)
-                        .padding(.vertical, 5.0)
-                        .background(Color(hue: 0.105, saturation: 0.201, brightness: 0.982))
+                            .padding(.horizontal, 20.0)
+                            .padding(.vertical, 5.0)
+                            .background(Color(hue: 0.105, saturation: 0.201, brightness: 0.982))
                     }).sheet(isPresented: $showResult, content: {
-                        FinalResultView(location: Delaunays(mainImage: self.mainImage, leftImage: self.leftImage, rightImage: self.rightImage))
+                        FinalResultView(poiLoc: Delaunays(mainImage: self.mainImage, leftImage: self.leftImage, rightImage: self.rightImage).findPinpoint())
                     })
                 }
                 .padding(.bottom, 50.0)

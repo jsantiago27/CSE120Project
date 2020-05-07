@@ -12,28 +12,30 @@ import MapKit
 
 
 struct FinalResultView: View {
+    var poiLoc : CLLocation
     
     
-    var location: Delaunays
-
+    func latitude() -> Double {
+        return poiLoc.coordinate.latitude
+    }
+    
+    func longitude() -> Double {
+        return poiLoc.coordinate.longitude
+    }
+    
     var body: some View {
         VStack(alignment: .center, spacing: 10.0) {
-            MapView(latitude: location.findPinpoint().coordinate.latitude, longitude: location.findPinpoint().coordinate.longitude)
+            MapView(latitude: latitude(), longitude: longitude())
                 .frame(height: 500)
             
-            Text("Point of Interest Location")
+            Text("Estimated Location of Point of Interest")
                 .font(.title)
             
             HStack(alignment: .bottom, spacing: 100.0) {
                 VStack(alignment: .leading, spacing: 20.0) {
-                    Text("Longitude")
+                    Text("Longitude: \(longitude())")
                         
-                    Text("Latitude")
-                }
-                VStack(alignment: .leading, spacing: 20.0) {
-                    Text("Longitude")
-                        
-                    Text("Latitude")
+                    Text("Latitude: \(latitude())")
                 }
             }.padding(20)
         }
@@ -43,6 +45,6 @@ struct FinalResultView: View {
 
 struct FinalResultView_Previews: PreviewProvider {
     static var previews: some View {
-        FinalResultView(location: Delaunays())
+        FinalResultView(poiLoc: CLLocation())
     }
 }

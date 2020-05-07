@@ -18,11 +18,34 @@ struct MapView: UIViewRepresentable {
         MKMapView(frame: .zero)
     }
     
-    func updateUIView(_ uiView: MKMapView, context: Context) {
-        let coordinate = CLLocationCoordinate2D(latitude: latitude ?? 0, longitude: longitude ?? 0)
-        let span = MKCoordinateSpan(latitudeDelta: 2.0, longitudeDelta: 2.0)
+    func updateUIView(_ view: MKMapView, context: Context) {
+        //let coordinate = CLLocationCoordinate2D(latitude: latitude ?? 0, longitude: longitude ?? 0)
+        //let span = MKCoordinateSpan(latitudeDelta: 2.0, longitudeDelta: 2.0)
+        //let region = MKCoordinateRegion(center: coordinate, span: span)
+        //uiView.setRegion(region, animated: true)
+        
+        
+        
+        // 1
+        view.mapType = MKMapType.standard // (satellite)
+
+        // 2
+        let mylocation = CLLocationCoordinate2D(latitude: latitude ?? 0, longitude: longitude ?? 0)
+
+        // 3
+        let coordinate = CLLocationCoordinate2D(
+            latitude: latitude ?? 0, longitude: longitude ?? 0)
+        let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
         let region = MKCoordinateRegion(center: coordinate, span: span)
-        uiView.setRegion(region, animated: true)
+        view.setRegion(region, animated: true)
+
+        // 4
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = mylocation
+
+        annotation.title = "Point of Interest Location"
+        annotation.subtitle = "This is an estimation of the point of interest"
+        view.addAnnotation(annotation)
     }
 }
 

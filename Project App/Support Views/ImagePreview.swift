@@ -65,7 +65,7 @@ struct ImagePreview: View {
                     .font(.caption)
                     .fontWeight(.thin)
                 
-                Text(String("Object Height: \(imageData.objectHeight())"))
+                Text(String("Object Height: \(imageData.imagePixelHeight())"))
                 .font(.caption)
                 .fontWeight(.thin)
                 /*

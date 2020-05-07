@@ -72,7 +72,7 @@ class ImageData : ObservableObject {
         return magnification
     }
     
-    public func objectHeight() -> Double {
+    public func imagePixelHeight() -> Double {
         
         let tempData = self.imgMetaData
         var imageHeight: Double = 0
@@ -84,7 +84,7 @@ class ImageData : ObservableObject {
             }
         }
         
-        return (imageHeight*0.352778)
+        return (imageHeight)
     }
     
     public func sensorHeight(focalLength: Double) -> Double {

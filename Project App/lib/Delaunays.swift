@@ -114,9 +114,9 @@ extension Delaunays {
         let focC = leftImage.focalLength()
         let locationC = leftImage.location
         
-        let exifData1 = (rightImage.imgMetaData!["{ImageHeight}"] as? Double ?? 0)
-        //let exifData2 = (mainImage.imgMetaData!["{ImageHeight}"] as? Double ?? 0)
-        let exifData3 = (leftImage.imgMetaData!["{ImageHeight}"] as? Double ?? 0)
+        let exifData1 = rightImage.imagePixelHeight()
+        let exifData2 = mainImage.imagePixelHeight()
+        let exifData3 = leftImage.imagePixelHeight()
         
         odistance_right = objectDistance(focalLength: focB, imageHeight: exifData1)
         odistance_left = objectDistance(focalLength: focC, imageHeight: exifData3)
@@ -139,7 +139,9 @@ extension Delaunays {
         let A_lengthB: Double  = midAB_length / (sin(alpha_AB))
         let A_lengthC: Double = midAC_length / (sin(alpha_AC))
         
-        let A_lengthAvg: Double = (A_lengthB + A_lengthC) / 2
+        let A_lengthAvg: Double = (A_lengthB - A_lengthC) / 2
+        
+        print(A_lengthAvg)
         
         let object_distanceFromPointA: CLLocation = CLLocation(latitude: (locationA?.coordinate.latitude ?? 0) + A_lengthAvg, longitude: locationA?.coordinate.longitude ?? 0)
         
