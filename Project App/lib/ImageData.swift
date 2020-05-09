@@ -25,17 +25,20 @@ class ImageData : ObservableObject {
     @Published public var image: Image!
     @Published public var location: CLLocation!
     @Published public var imgMetaData: NSDictionary?
+    @Published public var hasImage: Bool
     
     init() {
-        self.image = Image("Garfield")
+        self.image = Image("camera_placeholder")
         self.location = CLLocation()
         self.imgMetaData = nil
+        self.hasImage = false
     }
     
     init(image: Image, location: CLLocation, focalLength: Double, imgMetaData: NSDictionary) {
         self.image       = image
         self.location    = location
         self.imgMetaData = imgMetaData
+        self.hasImage    = true
     }
     
     // Function that returns the focal length of the camera used to take

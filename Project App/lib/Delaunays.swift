@@ -98,21 +98,31 @@ extension Delaunays {
         return ((focalLength * 70.556 * imageHeight) / (200.0 * 5.79))
     }
     
+    
+    public func checkImages() -> Bool {
+        return (mainImage.imgMetaData != nil) && (leftImage.imgMetaData != nil) && (rightImage.imgMetaData != nil)
+    }
 }
 
 // Calculation
 extension Delaunays {
     
     public func findPinpoint() -> CLLocation {
+        
         //A - focal length w/ GPS coordinates
         //let focA = mainImage.focalLength()
         let locationA = mainImage.location
+        assert(locationA != nil, "location A is null")
+        
         //B - focal length w/ GPS coordinates
         let focB = rightImage.focalLength()
         let locationB = rightImage.location
+        assert(locationB != nil, "location A is null")
+        
         //C -focal length w/ GPS coordinates
         let focC = leftImage.focalLength()
         let locationC = leftImage.location
+        assert(locationC != nil, "location A is null")
         
         let exifData1 = rightImage.imagePixelHeight()
         let exifData2 = mainImage.imagePixelHeight()
@@ -144,6 +154,12 @@ extension Delaunays {
         print(A_lengthAvg)
         
         let object_distanceFromPointA: CLLocation = CLLocation(latitude: (locationA?.coordinate.latitude ?? 0) + A_lengthAvg, longitude: locationA?.coordinate.longitude ?? 0)
+        
+        assert(locationA!.coordinate.latitude < 180.0, "Calculated Latitude is larger than 180");
+        assert(locationA!.coordinate.latitude > -180.0, "Calculated Latitude is smaller than -180");
+        
+        assert(locationA!.coordinate.longitude < 180.0, "Calculated Longitude is larger than 180");
+        assert(locationA!.coordinate.longitude > -180.0, "Calculated Longitude is smaller than -180");
         
         return object_distanceFromPointA
     }

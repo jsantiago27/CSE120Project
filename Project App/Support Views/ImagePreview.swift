@@ -28,7 +28,13 @@ struct ImagePreview: View {
     var imageName: String
     
     var body: some View {
-        HStack {
+        VStack {
+            
+            if(top) {
+                Text(imageName)
+                    .padding(.bottom, 40)
+                    .foregroundColor(Color.black)
+            }
             Button(action: {
                 self.showImagePicker.toggle()
             }) {
@@ -43,12 +49,20 @@ struct ImagePreview: View {
                     .shadow(radius: 5)
             )
             .frame(width: 120, height: 120)
-            .padding(5)
-                .padding(.leading, 30)
             
-            Spacer()
             
-            VStack(alignment: .leading) {
+            if(!top) {
+               Text(imageName)
+                    .padding(.top, 40)
+                    .foregroundColor(Color.black)
+           }
+            //.padding(5)
+            //  .padding(.leading, 30)
+            
+            //Spacer()
+            
+            //VStack(alignment: .leading) {
+                /*
                 Text(String("Focal Length: \(imageData.focalLength())"))
                     .font(.caption)
                     .fontWeight(.thin)
@@ -68,6 +82,7 @@ struct ImagePreview: View {
                 Text(String("Object Height: \(imageData.imagePixelHeight())"))
                 .font(.caption)
                 .fontWeight(.thin)
+                */
                 /*
                 Button(action: {
                     self.showImagePicker.toggle()
@@ -85,7 +100,7 @@ struct ImagePreview: View {
                 .padding(.vertical, 10)
                 */
             
-            }
+            //}
         }.sheet(isPresented: self.$showImagePicker) {
             ImagePicker(isShown: self.$showImagePicker, image: self.$imageData.image, location: self.$imageData.location, imgMetaData: self.$imageData.imgMetaData, sourceType: self.sourceType)
             .overlay(
@@ -101,7 +116,7 @@ struct ImagePreview_Previews: PreviewProvider {
     //@ObservedObject static var imageData: ImageData = ImageData()
     
     static var previews: some View {
-        ImagePreview(top: true, imageName: "Main Image")
+        ImagePreview(top: false, imageName: "Main Image")
         
     }
 }

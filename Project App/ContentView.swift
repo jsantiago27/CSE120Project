@@ -48,9 +48,14 @@ struct ContentView: View {
                     ImagePreview(imageData: mainImage, top: true, imageName: "Main Image")
                     //    .padding(.bottom, 10.0)
                     
+                    Spacer()
+                    
+                    HStack() {
                    // HStack(spacing: 20.0) {
-                    ImagePreview(imageData: leftImage, top: false, imageName: "Left Side Image")
-                    ImagePreview(imageData: rightImage, top: false, imageName: "Right Side Image")
+                        ImagePreview(imageData: leftImage, top: false, imageName: "Left Side Image")
+                        
+                        ImagePreview(imageData: rightImage, top: false, imageName: "Right Side Image")
+                    }
                     //}
                     .padding(.bottom, 10.0)
                     
@@ -64,7 +69,7 @@ struct ContentView: View {
                             .padding(.vertical, 5.0)
                             .background(Color(hue: 0.105, saturation: 0.201, brightness: 0.982))
                     }).sheet(isPresented: $showResult, content: {
-                        FinalResultView(poiLoc: Delaunays(mainImage: self.mainImage, leftImage: self.leftImage, rightImage: self.rightImage).findPinpoint())
+                        FinalResultView(poiLoc: Delaunays(mainImage: self.mainImage, leftImage: self.leftImage, rightImage: self.rightImage).findPinpoint(), isReady: Delaunays(mainImage: self.mainImage, leftImage: self.leftImage, rightImage: self.rightImage).checkImages())
                     })
                 }
                 .padding(.bottom, 50.0)
