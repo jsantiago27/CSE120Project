@@ -2,8 +2,8 @@
 //  FinalResultView.swift
 //  Project App
 //
-//  Created by Jefferson Santiago on 4/14/20.
-//  Copyright © 2020 Jefferson Santiago. All rights reserved.
+//  Created by team T͟Hē Lōkātərs on 4/14/20.
+//  Copyright © 2020 T͟Hē Lōkātərs. All rights reserved.
 //
 
 import SwiftUI
@@ -30,10 +30,6 @@ struct FinalResultView: View {
                     MapView(latitude: latitude(), longitude: longitude())
                         .frame(height: 500)
                     
-                    Text("Estimated Location of \nPoint of Interest")
-                        .font(.title)
-                        .multilineTextAlignment(.center)
-                    
                     HStack(alignment: .center, spacing: 100.0) {
                         VStack(alignment: .leading, spacing: 20.0) {
                             Text("Longitude \n \(longitude())")
@@ -59,6 +55,7 @@ struct FinalResultView: View {
                 }
             }
         }
+        .navigationBarTitle(Text("Estimated Location of Point of Interest"), displayMode: .inline)
     }
 }
 

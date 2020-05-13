@@ -2,8 +2,8 @@
 //  ImageSelectionUI.swift
 //  Project App
 //
-//  Created by Jefferson Santiago on 3/4/20.
-//  Copyright © 2020 Jefferson Santiago. All rights reserved.
+//  Created by team T͟Hē Lōkātərs on 3/4/20.
+//  Copyright © 2020 T͟Hē Lōkātərs. All rights reserved.
 //
 
 import SwiftUI

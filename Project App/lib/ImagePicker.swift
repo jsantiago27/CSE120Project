@@ -3,8 +3,8 @@
 //  Project App
 //  Description: This file handles the image pick and as well the camera shot of the app.
 //
-//  Created by Jefferson Santiago on 2/15/20.
-//  Copyright © 2020 Jefferson Santiago. All rights reserved.
+//  Created by team T͟Hē Lōkātərs on 2/15/20.
+//  Copyright © 2020 T͟Hē Lōkātərs. All rights reserved.
 //
 
 import Foundation

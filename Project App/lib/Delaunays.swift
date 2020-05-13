@@ -1,10 +1,11 @@
 //
-//  Delaunays.swift
+//  ImageData.swift
 //  Project App
 //
-//  Created by Ricky Trujillo on 4/21/20.
-//  Copyright © 2020 Jefferson Santiago. All rights reserved.
+//  Created by team T͟Hē Lōkātərs on 4/22/20.
+//  Copyright © 2020 T͟Hē Lōkātərs. All rights reserved.
 //
+
 
 import Foundation
 import CoreLocation
@@ -69,6 +70,8 @@ extension Delaunays {
     }
     
     private func findObjectHeight(magnification: Double, imageHeight: Double) -> Double {
+        // The equation below follows the mathematical definition of magnification
+        // Magnification = image_height / object height
         return imageHeight / magnification
     }
     
@@ -85,6 +88,7 @@ extension Delaunays {
     
     private func findDistFromTwoPoints(locA: CLLocation!, locB: CLLocation!) -> Double {
         var distBWPoints: Double = 0
+        // The equation below uses the distance formula equation to find the distance between 2 given points.
         distBWPoints = sqrt(pow(locB.coordinate.latitude - locA.coordinate.latitude, 2) + pow(locB.coordinate.longitude - locA.coordinate.longitude, 2))
         
         return distBWPoints
@@ -95,6 +99,8 @@ extension Delaunays {
     }
     
     private func objectDistance(focalLength: Double, imageHeight: Double) -> Double {
+        
+        //
         return ((focalLength * 70.556 * imageHeight) / (200.0 * 5.79))
     }
     

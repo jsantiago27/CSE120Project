@@ -3,8 +3,8 @@
 //  Project App
 //  Description: This file contains the presets and attributes of the camera icon
 //
-//  Created by Jefferson Santiago on 3/3/20.
-//  Copyright © 2020 Jefferson Santiago. All rights reserved.
+//  Created by team T͟Hē Lōkātərs on 3/3/20.
+//  Copyright © 2020 T͟Hē Lōkātərs. All rights reserved.
 //
 
 import SwiftUI

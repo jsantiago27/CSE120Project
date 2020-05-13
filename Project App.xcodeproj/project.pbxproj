@@ -17,7 +17,6 @@
 		5F0337B623F4952300C05850 /* Project_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0337B523F4952300C05850 /* Project_AppUITests.swift */; };
 		5F176C4F240F084D001FFEDA /* CameraOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F176C4E240F084D001FFEDA /* CameraOverlay.swift */; };
 		5F176C5124106685001FFEDA /* ImageSelectionUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F176C5024106685001FFEDA /* ImageSelectionUI.swift */; };
-		5F3083E32433F7F900C777A6 /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3083E22433F7F900C777A6 /* CameraController.swift */; };
 		5F3FDD6B243FDEE200E0CE68 /* ImagePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3FDD6A243FDEE200E0CE68 /* ImagePreview.swift */; };
 		5F3FDD6D24461BD900E0CE68 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3FDD6C24461BD900E0CE68 /* LocationManager.swift */; };
 		5F3FDD74244631CD00E0CE68 /* Dot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3FDD73244631CD00E0CE68 /* Dot.swift */; };
@@ -62,7 +61,6 @@
 		5F0337B723F4952300C05850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F176C4E240F084D001FFEDA /* CameraOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CameraOverlay.swift; path = "Project App/Support Views/CameraOverlay.swift"; sourceTree = SOURCE_ROOT; };
 		5F176C5024106685001FFEDA /* ImageSelectionUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageSelectionUI.swift; path = "Project App/Support Views/ImageSelectionUI.swift"; sourceTree = SOURCE_ROOT; };
-		5F3083E22433F7F900C777A6 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CameraController.swift; path = "Project App/lib/CameraController.swift"; sourceTree = SOURCE_ROOT; };
 		5F3FDD6A243FDEE200E0CE68 /* ImagePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImagePreview.swift; path = "Project App/Support Views/ImagePreview.swift"; sourceTree = SOURCE_ROOT; };
 		5F3FDD6C24461BD900E0CE68 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = "Project App/lib/LocationManager.swift"; sourceTree = SOURCE_ROOT; };
 		5F3FDD73244631CD00E0CE68 /* Dot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dot.swift; sourceTree = "<group>"; };
@@ -179,7 +177,6 @@
 			children = (
 				5F3FDD6C24461BD900E0CE68 /* LocationManager.swift */,
 				5F6BABD523F8A57E00E68E2F /* ImagePicker.swift */,
-				5F3083E22433F7F900C777A6 /* CameraController.swift */,
 				1FC600C5244FB9BC00B752A2 /* Delaunays.swift */,
 				5F837C76245028DD00848DED /* ImageData.swift */,
 			);
@@ -323,7 +320,6 @@
 				5F3FDD7A244683F300E0CE68 /* MapView.swift in Sources */,
 				5F3FDD782446838300E0CE68 /* FinalResultView.swift in Sources */,
 				5F176C5124106685001FFEDA /* ImageSelectionUI.swift in Sources */,
-				5F3083E32433F7F900C777A6 /* CameraController.swift in Sources */,
 				5F837C77245028DD00848DED /* ImageData.swift in Sources */,
 				1FC600C6244FB9BC00B752A2 /* Delaunays.swift in Sources */,
 				5F6BABD623F8A57E00E68E2F /* ImagePicker.swift in Sources */,

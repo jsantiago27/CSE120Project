@@ -2,17 +2,23 @@
 //  SettingMenu.swift
 //  Project App
 //
-//  Created by Jefferson Santiago on 4/14/20.
-//  Copyright © 2020 Jefferson Santiago. All rights reserved.
+//  Created by team T͟Hē Lōkātərs on 4/14/20.
+//  Copyright © 2020 T͟Hē Lōkātərs. All rights reserved.
 //
 
 import SwiftUI
 
 struct SettingMenu: View {
     var body: some View {
-        List() {
-            Text("About")
+        ZStack {
+            Color(#colorLiteral(red: 0.9720847011, green: 0.7606303096, blue: 0.5701220632, alpha: 1))
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                Text("About")
+            }
         }
+        .navigationBarTitle(Text("Settings"), displayMode: .inline)
     }
 }
 
