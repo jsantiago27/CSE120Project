@@ -30,16 +30,20 @@ struct FinalResultView: View {
                     MapView(latitude: latitude(), longitude: longitude())
                         .frame(height: 500)
                     
-                    HStack(alignment: .center, spacing: 100.0) {
-                        VStack(alignment: .leading, spacing: 20.0) {
-                            Text("Longitude \n \(longitude())")
+                    VStack(alignment: .center, spacing: 10.0) {
+                        Text("Point of interest Coordinates")
+                            .font(.title)
+                        
+                        HStack(alignment: .top, spacing: 20.0) {
+                            Text("Longitude: \(longitude())")
                                 .multilineTextAlignment(.center)
                                 .lineLimit(2)
                                 
-                            Text("Latitude \n \(latitude())")
+                            Text("Latitude: \(latitude())")
                                 .multilineTextAlignment(.center)
                                 .lineLimit(2)
                         }
+                        
                     }
                     .padding(20)
                 }
@@ -61,6 +65,6 @@ struct FinalResultView: View {
 
 struct FinalResultView_Previews: PreviewProvider {
     static var previews: some View {
-        FinalResultView(poiLoc: CLLocation(), isReady: false)
+        FinalResultView(poiLoc: CLLocation(), isReady: true)
     }
 }
